@@ -3,8 +3,7 @@ import { NavController } from 'ionic-angular';
 import { GenerateTree, SortTree, GenerateHistory } from '.././states/tree-view.actions';
 import { ViewTreeState } from '.././states/tree-view.state';
 import { Store, Select } from '@ngxs/store';
-import { Observable } from 'rxjs';  
-import * as data from './data.json';
+import { Observable } from 'rxjs';
 import { LoadingController, ActionSheetController } from 'ionic-angular';
 
 @Component({
@@ -14,6 +13,7 @@ import { LoadingController, ActionSheetController } from 'ionic-angular';
 export class TreeViewComponent implements OnInit{
   objectSelected: null;
   nameSort: string = 'arrow-down';
+  data: null;
 
   @Select(ViewTreeState.getObjects) objects$: Observable<Object>;
 
@@ -22,25 +22,28 @@ export class TreeViewComponent implements OnInit{
   constructor(private store: Store, public navCtrl: NavController, public loadingCtrl: LoadingController,
               public actionSheetCtrl: ActionSheetController) {}
 
+  ngOnInit() {}
+
   presentLoading() {
     const loader = this.loadingCtrl.create({
       content: 'Loading files...',
       duration: 3000
     });
     loader.present();
+  }
+
+  generateTree(data) {
+    this.data = data;
+    this.presentLoading();
     this.store.dispatch(new GenerateTree(<any>data, 'Root'));
   }
 
-  ngOnInit() {
-    this.presentLoading();
-  }
-
   showDirectory(directory) {
-    this.store.dispatch(new GenerateTree(<any>data, directory));
+    this.store.dispatch(new GenerateTree(<any>this.data, directory));
   }
 
   showPrevDirectory(directory) {
-    this.store.dispatch(new GenerateHistory(<any>data, directory));
+    this.store.dispatch(new GenerateHistory(<any>this.data, directory));
   }
 
   sortToggle(field) {
