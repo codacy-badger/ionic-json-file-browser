@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 import { LoadingController, ActionSheetController } from 'ionic-angular';
 
 @Component({
-  selector: 'tree-view',
-  templateUrl: 'tree-view.html'
+  selector: 'tree-view-component',
+  templateUrl: 'tree-view.component.html'
 })
 export class TreeViewComponent implements OnInit{
   objectSelected: null;
