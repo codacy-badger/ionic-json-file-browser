@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TreeViewComponent } from './components/tree-view.component';
-import { ObjectSortingService } from './services/object-sorting.service';
+import { TreeViewComponent } from '../components/tree-view.component';
+import { ObjectSortingService } from '../services/object-sorting.service';
 import { IonicModule } from 'ionic-angular';
  
 @NgModule({
