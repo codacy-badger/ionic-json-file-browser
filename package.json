@@ -1,5 +1,5 @@
 {
-  "name": "tree-view",
+  "name": "ionic-json-tree-view",
   "version": "0.0.1",
   "description": "Ionic module for tree view.",
   "main": "./dist/index.js",
@@ -8,6 +8,25 @@
     "build": "rm -rf dist && npm run ngc",
     "publishPackage": "npm run build && npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanteo96/tree-view-ionic.git"
+  },
   "author": "Ryan Teo Yii Wen",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/common": "^6.0.5",
+    "@angular/compiler": "^6.0.5",
+    "@angular/compiler-cli": "^6.0.5",
+    "@angular/core": "^6.0.5",
+    "@angular/forms": "^6.0.5",
+    "@angular/platform-browser": "^6.0.5",
+    "@angular/platform-browser-dynamic": "^6.0.5",
+    "@ngxs/store": "^3.1.4",
+    "ionic-angular": "^3.9.2",
+    "rxjs": "^6.2.1",
+    "rxjs-compat": "^6.2.1",
+    "typescript": "2.7.2",
+    "zone.js": "^0.8.26"
+  }
 }

@@ -1,0 +1,57 @@
+[
+    {
+      "name": "Mitzi",
+      "parent": "Root",
+      "type": "folder"
+    },
+    {
+      "name": "Ware",
+      "parent": "Root",
+      "type": "folder"
+    },
+    {
+      "name": "Castillo",
+      "parent": "Root",
+      "type": "folder"
+    },
+    {
+      "name": "Pickett",
+      "parent": "Root",
+      "type": "folder"
+    },
+    {
+      "name": "Ramos",
+      "parent": "Root",
+      "type": "folder"
+    },
+    {
+      "name": "Contacts",
+      "parent": "Root",
+      "type": "folder"
+    },
+    {
+      "name": "Weber",
+      "parent": "Contacts",
+      "type": "folder"
+    },
+    {
+      "name": "Garner",
+      "parent": "Contacts",
+      "type": "folder"
+    },
+    {
+      "name": "Vivian",
+      "parent": "Contacts",
+      "type": "folder"
+    },
+    {
+      "name": "Gilliam",
+      "parent": "Contacts",
+      "type": "folder"
+    },
+    {
+      "name": "Cabrera",
+      "parent": "Contacts",
+      "type": "folder"
+    }
+  ]
