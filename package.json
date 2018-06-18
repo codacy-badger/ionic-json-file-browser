@@ -1,0 +1,13 @@
+{
+  "name": "tree-view",
+  "version": "0.0.1",
+  "description": "Ionic module for tree view.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "ngc": "ngc",
+    "build": "rm -rf dist && npm run ngc",
+    "publishPackage": "npm run build && npm publish"
+  },
+  "author": "Ryan Teo Yii Wen",
+  "license": "ISC"
+}
