@@ -3,6 +3,8 @@
   "version": "0.0.4",
   "description": "Ionic module for tree view.",
   "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "ngc": "ngc",
     "build": "rm -rf dist && npm run ngc",
