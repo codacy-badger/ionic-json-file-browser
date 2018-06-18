@@ -1,6 +1,6 @@
 {
   "name": "ionic-json-tree-view",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Ionic module for tree view.",
   "main": "./dist/index.js",
   "scripts": {
