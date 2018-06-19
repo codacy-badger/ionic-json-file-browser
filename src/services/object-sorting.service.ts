@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Object } from '../states/tree-view.model';
 
-@Injectable({
-  providedIn: 'root',
-})
-
+@Injectable()
 export class ObjectSortingService {
     private objects: Object[];
 

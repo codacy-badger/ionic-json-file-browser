@@ -6,37 +6,46 @@ import {
     GenerateTree,
     SortTree,
     GenerateHistory,
+    ObjectSelect,
 } from './tree-view.actions';
 import { ObjectSortingService } from '../services/object-sorting.service';
 
-export interface ViewTreeStateModel {
+export interface TreeViewStateModel {
     objects: Object[];
     history: String[];
+    objectSelected: Object;
 }
 
-@State<ViewTreeStateModel>({
+@State<TreeViewStateModel>({
     name: 'tree',
     defaults : {
         objects: [],
         history: [],
+        objectSelected: <Object>{},
     },
 })
 
-export class ViewTreeState {
+export class TreeViewState {
     constructor(private objectSorting: ObjectSortingService) {}
 
     @Selector()
-    static getObjects(state: ViewTreeStateModel) {
+    static getObjects(state: TreeViewStateModel) {
         return state.objects;
     }
 
     @Selector()
-    static getHistory(state: ViewTreeStateModel) {
+    static getHistory(state: TreeViewStateModel) {
         return state.history;
     }
 
+    @Selector()
+    static getObjectSelected(state: TreeViewStateModel) {
+        console.log('here');
+        return state.objectSelected;
+    }
+
     @Action(GenerateTree)
-    generateTree({ getState, patchState }: StateContext<ViewTreeStateModel>, { object, directory }: GenerateTree) {
+    generateTree({ getState, patchState }: StateContext<TreeViewStateModel>, { object, directory }: GenerateTree) {
         const state = getState();
         const objects = object.filter(a => a.parent === directory);
         patchState({
@@ -46,7 +55,7 @@ export class ViewTreeState {
     }
 
     @Action(SortTree) 
-    sortTree({ getState, patchState }: StateContext<ViewTreeStateModel>, { field }: SortTree) {
+    sortTree({ getState, patchState }: StateContext<TreeViewStateModel>, { field }: SortTree) {
         const state = getState();
 
         patchState({
@@ -55,7 +64,7 @@ export class ViewTreeState {
     }
 
     @Action(GenerateHistory)
-    generateHistory({ getState, patchState }: StateContext<ViewTreeStateModel>, { object, directory }: GenerateHistory) {
+    generateHistory({ getState, patchState }: StateContext<TreeViewStateModel>, { object, directory }: GenerateHistory) {
         const state = getState();
         const index = state.history.indexOf(directory) + 1;
         const objects = object.filter(a => a.parent === directory);
@@ -63,6 +72,16 @@ export class ViewTreeState {
         patchState({
             objects: this.objectSorting.sortObjects('name-asc', objects),
             history: state.history.slice(0, index),
+        });
+    }
+
+    @Action(ObjectSelect)
+    objectSelect({ getState, patchState }: StateContext<TreeViewStateModel>, { object }: ObjectSelect) {
+        const state = getState();
+
+        patchState({
+            ...state,
+            objectSelected: object,
         });
     }
 }

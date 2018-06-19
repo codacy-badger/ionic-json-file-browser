@@ -17,3 +17,9 @@ export class GenerateHistory {
 
     constructor(public object: Object[], public directory: string) {}
 }
+
+export class ObjectSelect {
+    static readonly type = '[Tree] Select';
+
+    constructor(public object: Object) {}
+}
