@@ -14,8 +14,9 @@ $ npm install ionic-json-file-browser
 
 ## To-do
 - [x] List View.
-- [ ] History View.
+- [x] History View.
 - [x] File Navigation.
+- [ ] Tree View.
 - [ ] List Sorting.
 - [ ] Context Menu.
 - [ ] Unit Testing.
