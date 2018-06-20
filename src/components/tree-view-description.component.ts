@@ -71,5 +71,4 @@ export class TreeViewDescriptionComponent implements OnInit {
     constructor(public store: Store) {}
 
     ngOnInit() {}
-
 }

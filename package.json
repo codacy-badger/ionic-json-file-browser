@@ -1,7 +1,7 @@
 {
-  "name": "ionic-json-tree-view",
+  "name": "ionic-json-file-browser",
   "version": "0.0.8",
-  "description": "Ionic module for tree view.",
+  "description": "Ionic module for file browser based on JSON.",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "files": [
@@ -31,9 +31,7 @@
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
     "typescript": "2.7.2",
-    "zone.js": "^0.8.26"
-  },
-  "dependencies": {
+    "zone.js": "^0.8.26",
     "@ngxs/logger-plugin": "^3.1.4"
   }
 }

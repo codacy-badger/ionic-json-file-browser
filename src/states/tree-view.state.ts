@@ -39,7 +39,7 @@ export class TreeViewState {
     }
 
     @Selector()
-    static getObjectSelected(state: TreeViewStateModel) {
+    static getObjectSelected(state: TreeViewStateModel): Object {
         console.log('here');
         return state.objectSelected;
     }
