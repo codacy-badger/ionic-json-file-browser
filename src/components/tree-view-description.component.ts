@@ -22,8 +22,8 @@ import { Observable } from 'rxjs';
                                         Name
                                     </ion-col>
                                     <ion-col>
-                                        <ng-container *ngIf="objectSelected$">
-                                            {{ objectSelected$.name }}
+                                        <ng-container *ngIf="(objectSelected$ | async).name">
+                                            {{ (objectSelected$ | async).name }}
                                         </ng-container>
                                     </ion-col>
                                 </ion-row>
@@ -32,8 +32,8 @@ import { Observable } from 'rxjs';
                                         Location
                                     </ion-col>
                                     <ion-col>
-                                        <ng-container *ngIf="objectSelected$">
-                                            {{ objectSelected$.parent }}
+                                        <ng-container *ngIf="(objectSelected$ | async).parent">
+                                            {{ (objectSelected$ | async).parent }}
                                         </ng-container>
                                     </ion-col>
                                 </ion-row>
@@ -42,8 +42,8 @@ import { Observable } from 'rxjs';
                                         Type
                                     </ion-col>
                                     <ion-col>
-                                        <ng-container *ngIf="objectSelected$">
-                                            {{ objectSelected$.type }}
+                                        <ng-container *ngIf="(objectSelected$ | async).type">
+                                            {{ (objectSelected$ | async).type }}
                                         </ng-container>
                                     </ion-col>
                                 </ion-row>
