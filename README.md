@@ -2,11 +2,11 @@
 
 ## Status: Work in progress
 
-A Ionic component to render a file browser that can handle any JSON file given to it.
+A Ionic module to render a file browser that can handle any JSON file given to it.
 
 ## Installation
 ```sh
-$ npm install ionic-json-tree-view
+$ npm install ionic-json-file-browser
 ```
 
 ## How to use this API
