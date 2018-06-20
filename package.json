@@ -1,6 +1,6 @@
 {
   "name": "ionic-json-file-browser",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Ionic module for file browser based on JSON.",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
