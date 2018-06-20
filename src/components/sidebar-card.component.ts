@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TreeViewState } from '../states/tree-view.state';
+import { FileBrowserState } from '../states/file-browser.state';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'tree-view-description-component',
+    selector: 'sidebar-card',
     template: `
-    <div class="tree-view-description">
+    <div class="sidebar-card">
         <ion-grid>
             <ion-row>
                 <ion-col>
@@ -65,8 +65,8 @@ import { Observable } from 'rxjs';
     styles: [`
     `],
 })
-export class TreeViewDescriptionComponent implements OnInit {
-    @Select(TreeViewState.getObjectSelected) objectSelected$: Observable<Object>;
+export class SidebarCardComponent implements OnInit {
+    // @Select(FileBrowserState.getObjectSelected) objectSelected$: Observable<Object>;
 
     constructor(public store: Store) {}
 

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Object } from '../states/tree-view.model';
+import { Node } from '../states/file-browser.model';
 
 @Injectable()
-export class ObjectSortingService {
-    private objects: Object[];
+export class ListSortingService {
+    private nodes: Node[];
 
     constructor() {}
 
@@ -23,26 +23,24 @@ export class ObjectSortingService {
         return 0;
     }
 
-    sortObjects(field, array) {
-        this.objects = array;
+    sortNodes(field, array) {
+        this.nodes = array;
 
         switch (field) {
             case 'name-asc': {
-                this.objects.sort(this.compareNamesAsc);
+                this.nodes.sort(this.compareNamesAsc);
                 break;
             }
             case 'name-desc': {
-                this.objects.sort(this.compareNamesDesc);
+                this.nodes.sort(this.compareNamesDesc);
                 break;
             }
-            case 'type':
-            case 'size':
             default: {
-                this.objects.sort(this.compareNamesAsc);
+                this.nodes.sort(this.compareNamesAsc);
                 break;
             }
         }
 
-        return this.objects;
+        return this.nodes;
     }
 }
